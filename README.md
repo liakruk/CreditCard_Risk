@@ -78,6 +78,22 @@ O pipeline completo desenvolvido em **3 etapas principais**:
 
 ---
 
-### ⚡ Melhorias
-README inspirado no fork do [@faelp22](https://github.com/faelp22)
+
+### 📞 Contato
+- **GitHub**: [liakruk](https://github.com/liakruk)
+- **Linkedin**: [liakruk](https://www.linkedin.com/in/liakruk/)
+
+
+### ⚡ Sugestões/Feedback e Melhorias
+
+- [x] README inspirado no fork do [@faelp22](https://github.com/faelp22)
+- [ ] "Expor o modelo via API (FastAPI ou Flask) = Desacopla e facilita integrações futuras com sistemas mais robustos ou outros serviços."
+- [ ] "Criação de Frontend: HTML/CSS/JS consumindo a API. Em uma interface própria eleva o nível da apresentação e disposição das informações."
+- [ ] "Usar um LLM via API com free tier (Grok)"
+- [ ] "Deploy da solução no Vercel ou Render
+- [ ] Expor estatísticas padrão para dar contexto ao LLM (curtose, média, mediana, resultados de testes de aderência de distribuição...)
+- [ ] Testar modelo local qwen2.5:3b para testes
+- [ ] Função assíncrona para enviar o relatório de sugestão via API para wpp ou smtp para e-mail
+- [ ] Sugerir automaticamente o melhor (ou quase) threshold, derivado da relação T = Custo/Lucro + Custo
+- [ ] Threshold dinâmico individualizado por cliente em relação ao custo específico
 
