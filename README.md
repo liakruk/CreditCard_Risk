@@ -1,5 +1,5 @@
 # 💳  ML + GenAI para Análise de Crédito
-> Ferramenta de previsão de inadimplência que combina Machine Learning e GenAI para ajuste interativo de threshold, explicabilidade do modelo e suporte à tomada de decisão.
+> Sistema inteligente de previsão de inadimplência que combina Machine Learning e GenAI para ajuste interativo de threshold, explicabilidade do modelo e suporte à tomada de decisão.
 
 <div align="center">
   
@@ -9,8 +9,6 @@
 [![Ollama](https://img.shields.io/badge/Ollama-phi3:mini-black.svg?style=flat&logo=ollama&logoColor=white)](https://scikit-learn.org)
 [![Kaggle](https://img.shields.io/badge/Kaggle-Dataset-blue.svg?style=flat&logo=kaggle&logoColor=white)](https://scikit-learn.org)
 
-<h3>Demonstração do projeto</h3>
-
 ![1220](https://github.com/user-attachments/assets/6f3f1c31-e485-41c2-a0b9-6f0cef2f7e67)
 
 </div>
@@ -19,7 +17,7 @@
 
 ## 🎯 Overview
 
-O projeto combina classificação supervisionada com uma aplicação web interativa (Streamlit), permitindo a avaliação de risco de crédito por cliente, ajuste dinâmico do limiar de decisão e geração de explicações do modelo. A explicabilidade é realizada com SHAP, onde o papel do LLM é traduzir os resultados numéricos em insights compreensíveis ao modelo para tomada de decisão.
+O projeto desenvolve uma classificação supervisionada com uma aplicação web interativa (Streamlit), permitindo a avaliação de risco de crédito por cliente, ajuste dinâmico do limiar de decisão e geração de explicações do modelo. A explicabilidade é realizada com SHAP, onde o papel do LLM é traduzir os resultados numéricos em insights compreensíveis ao modelo para tomada de decisão.
 
 ## 📂 Estrutura
 
@@ -35,4 +33,51 @@ CreditCard_Risk/
 └── requirements.txt
 ```
 
+## 🏗️ Arquitetura
+
+O pipeline completo desenvolvido em **3 etapas principais**:
+
+### 📊 1. Análise Exploratória & Feature Engineering
+**Arquivo**: `notebooks/credit_EDA.ipynb`
+
+- Análise exploratória profunda de 30.000 clientes
+- Identificação de padrões de comportamento financeiro
+- Criação de features derivadas:
+  - `CREDIT_UTILIZATION`: Razão entre fatura e limite de crédito
+  - `UTILIZATION_GROWTH_6M`: Tendência de crescimento do uso de crédito
+  - `payment_ratio1`: Capacidade de pagamento da fatura
+  - Séries temporais de 6 meses de histórico de pagamento
+
+**Insights-chave**:
+- Clientes com utilização de crédito > 80% têm risco 4.5x maior
+- Histórico de pagamento dos últimos 3 meses é altamente preditivo
+- Padrões demográficos (idade, escolaridade, ) correlacionam com risco
+
+### 🤖 2. Modelagem Preditiva & Interface Interativa
+**Arquivos**: `app.py`, `llm.py`, `explain.py`
+
+- **Modelo**: Classificação binária (Random Forest)
+- **Métricas**: Precision, Recall, F1-Score, ROC-AUC
+- **Interface Streamlit**:
+  - Upload de dados de clientes
+  - Ajuste dinâmico de threshold (0-100%)
+  - Visualização de métricas de negócio
+  - Simulação de lucro/prejuízo
+
+### 🧠 3. Explicabilidade com IA Generativa
+**Arquivo**: `llm.py`, `prompts.py`
+
+- Integrado à Interface Interativa
+- **SHAP (SHapley Additive exPlanations)**: Análise de importância de features
+- **LLM Local (Ollama)**: Geração de narrativas personalizadas: Tradução dos valores do SHAP em linguagem natural para o usuário.
+- **Explicações contextualizadas**: 
+  - Por que o crédito foi aprovado/negado?
+  - Quais fatores mais influenciaram a decisão?
+  - Recomendações para melhoria do score
+
+
 ---
+
+### ⚡ Melhorias
+README inspirado no fork do [@faelp22](https://github.com/faelp22)
+
