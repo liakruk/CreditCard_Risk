@@ -5,7 +5,6 @@
   
 [![Python](https://img.shields.io/badge/Python-3.11+-blue.svg?style=flat&logo=python&logoColor=white)](https://python.org)
 [![Streamlit](https://img.shields.io/badge/Streamlit-1.51+-red.svg?style=flat&logo=streamlit&logoColor=white)](https://streamlit.io/)
-[![FastAPI](https://img.shields.io/badge/FastAPI-0.124+-green.svg?style=flat&logo=fastapi&logoColor=white)](https://fastapi.tiangolo.com)
 [![scikit-learn](https://img.shields.io/badge/scikit--learn-1.6+-orange.svg?style=flat&logo=scikit-learn&logoColor=white)](https://scikit-learn.org)
 [![Ollama](https://img.shields.io/badge/Ollama-phi3:mini-black.svg?style=flat&logo=ollama&logoColor=white)](https://scikit-learn.org)
 [![Kaggle](https://img.shields.io/badge/Kaggle-Dataset-blue.svg?style=flat&logo=kaggle&logoColor=white)](https://scikit-learn.org)
