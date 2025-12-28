@@ -83,6 +83,8 @@ O pipeline completo desenvolvido em **3 etapas principais**:
 - **GitHub**: [liakruk](https://github.com/liakruk)
 - **Linkedin**: [liakruk](https://www.linkedin.com/in/liakruk/)
 
+---
+
 ## 🚀 Roadmap e Melhorias Futuras
 
 Este projeto está em evolução contínua. Abaixo estão as melhorias planejadas com base em feedbacks da comunidade e estudos de aprofundamento técnico.
